@@ -1,4 +1,0 @@
-astral==2.2
-influxdb-client==1.16.0
-pytz==2021.1
-requests==2.25.1

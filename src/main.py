@@ -16,16 +16,15 @@ COLLECT_MINMAX_INVERTER_DATA = (
 
 INVERTER_ENDPOINT = environ["INVERTER_ENDPOINT"]
 
-INFLUXDB_BUCKET = environ.get("INFLUX_DB", "fronius")
-INFLUX_USE_SSL = environ.get("INFLUX_USE_SSL", "false") == "true"
+INFLUXDB_BUCKET = environ.get("INFLUXDB_BUCKET", "fronius")
 
 IGNORE_SUN_DOWN = environ.get("IGNORE_SUN_DOWN", "false") == "true"
 
-LOCATION_CITY = environ.get("LOCATION_CITY", "Melbourne")
-LOCATION_REGION = environ.get("LOCATION_REGION", "Australia")
-LOCATION_TIMEZONE = environ.get("LOCATION_TIMEZONE", "Australia/Melbourne")
-LOCATION_LAT = float(environ.get("LOCATION_LAT", "-37.840935"))
-LOCATION_LNG = float(environ.get("LOCATION_LNG", "144.946457"))
+LOCATION_CITY = environ["LOCATION_CITY"]
+LOCATION_REGION = environ["LOCATION_REGION"]
+LOCATION_TIMEZONE = environ["LOCATION_TIMEZONE"]
+LOCATION_LAT = float(environ["LOCATION_LAT"])
+LOCATION_LNG = float(environ["LOCATION_LNG"])
 
 client = InfluxDBClient.from_env_properties()
 
@@ -33,6 +32,8 @@ location_info = LocationInfo(
     LOCATION_CITY, LOCATION_REGION, LOCATION_TIMEZONE, LOCATION_LAT, LOCATION_LNG
 )
 tz = pytz.timezone(LOCATION_TIMEZONE)
+print(f"Location: {location_info}")
+print(f"Timezone: {tz}")
 endpoints = []
 
 if COLLECT_MINMAX_INVERTER_DATA:

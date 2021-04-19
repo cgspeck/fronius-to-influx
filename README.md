@@ -1,8 +1,8 @@
 # fronius-to-influx
 
-Collect Fronius inverter data and save in Influxdb for Grafana. This tool collects the most basic Fronius inverter data for a most basic fotovoltaic setup. If your installation is more sophisticated, then probably some extra work will be reqired.
+Collect Fronius inverter data and save in Influxdb for Grafana. This tool collects the most basic Fronius inverter data for a most basic photovoltaic setup. If your installation is more sophisticated, then probably some extra work will be required.
 
-# fronius endpoints
+## Fronius Endpoints
 
 This tool collects data from one or many of the three endpoints below. Endpoints that can be used (adjust DeviceId accordingly):
 
@@ -10,46 +10,47 @@ This tool collects data from one or many of the three endpoints below. Endpoints
     http://<fronius_ip>/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DataCollection=CommonInverterData&DeviceId=1
     http://<fronius_ip>/solar_api/v1/GetInverterRealtimeData.cgi?Scope=Device&DataCollection=MinMaxInverterData&DeviceId=1
 
-# install reqirements
+## Install Requirements
 
 To install requirements:
 
+```
+    python3 -m venv .venv
+    source ./.venv/bin/activate
     pip install -r requirements.txt
+```
 
-# run "production" environment
+## Running Locally
 
-To run this tool with real inverter data, first copy the `src/dev.py` file to `src/prod.py` and adjust configuration (IP addresses, port numbers, user names and passwords, list of endpoints):
+Install [direnv](https://direnv.net/), copy `.envrc.example` to `.envrc` and modify it to suit, then run:
 
-    vim src/prod.py
+    python src/main.py
 
-Then run:
+## Running In Docker
 
-    python src/prod.py
+Modify `.envrc` as above then run:
 
-# install dev environment
+    ./scripts/run.sh
 
-To install dev environment:
+Or:
 
-    pip install -r requirements/dev.txt
+    docker-compose up
 
-# mock fronius server
+## Mock Fronius Server
 
-To run mock fronius server:
+To install requirements and run:
 
+    pip install -r requirements-dev.txt
     export FLASK_APP=json_server
     flask run
 
-# run "development" environment
+Modify `.envrc` to point to the mock server, then run:
 
-For development, I used this Grafana + Influx Docker image: https://hub.docker.com/r/philhawthorne/docker-influxdb-grafana/
+    python src/main.py
 
-Edit the `dev.py` file and adjust accordingly. Then run:
+## Grafana dashboards
 
-    python src/dev.py
-
-# grafana dashboards
-
-I put my dashboards in `grafana_dashboards` directory. Feel free to use them.
+Grafana dashboards from the parent repo are in the `grafana_dashboards` directory.
 
 ![Screenshot](img/screenshot.png?raw=true "Screenshot")
 ![Screenshot2](img/screenshot2.png?raw=true "Screenshot2")

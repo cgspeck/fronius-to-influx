@@ -1,6 +1,19 @@
 export INVERTER_ENDPOINT=your-inverter-ip-address
+
 export INFLUXDB_V2_TOKEN=your-token
 export INFLUXDB_V2_URL=http://your-influx-db-host:port
 export INFLUXDB_V2_ORG=your-influxdb-org
 export INFLUXDB_V2_SSL_CA_CERT=false
 export INFLUXDB_BUCKET=fronius
+
+export COLLECT_COMMON_INVERTER_DATA=true
+export COLLECT_3P_INVERTER_DATA=false
+export COLLECT_MINMAX_INVERTER_DATA=false
+
+export IGNORE_SUN_DOWN=false
+
+export LOCATION_CITY=Melbourne
+export LOCATION_REGION=Victoria
+export LOCATION_TIMEZONE="Australia/Melbourne"
+export LOCATION_LAT=-37.840935
+export LOCATION_LNG=144.946457
