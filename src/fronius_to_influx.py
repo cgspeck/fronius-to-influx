@@ -156,7 +156,7 @@ class FroniusToInflux:
                     self.sun_is_shining()
                     collected_datas = []
                     for url in self.endpoints:
-                        print(f"calling {url}...")
+                        print(f"getting {url}...")
                         response = get(url)
                         response.raise_for_status()
                         self.data = response.json()
@@ -167,12 +167,10 @@ class FroniusToInflux:
                     sleep(self.DATA_COLLECTION_INTERVAL)
                 except SunIsDown:
                     print("Waiting for sunrise")
-                    sleep(60)
-                    print("Waited 60 seconds for sunrise")
+                    sleep(300)
                 except ConnectionError:
                     print("Waiting for connection...")
-                    sleep(10)
-                    print("Waited 10 seconds for connection")
+                    sleep(60)
                 except KeyError:
                     raise WrongFroniusData("Response structure is not healthy")
 
