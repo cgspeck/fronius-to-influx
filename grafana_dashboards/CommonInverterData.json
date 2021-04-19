@@ -45,9 +45,7 @@
       "links": [],
       "options": {
         "fieldOptions": {
-          "calcs": [
-            "last"
-          ],
+          "calcs": ["last"],
           "defaults": {
             "mappings": [
               {
@@ -98,15 +96,11 @@
           "alias": "AC power",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "none"
-              ],
+              "params": ["none"],
               "type": "fill"
             }
           ],
@@ -118,9 +112,7 @@
           "select": [
             [
               {
-                "params": [
-                  "PAC"
-                ],
+                "params": ["PAC"],
                 "type": "field"
               },
               {
@@ -141,11 +133,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "datasource": "InfluxDB",
       "decimals": 3,
       "format": "watth",
@@ -206,15 +194,11 @@
           "alias": "Day energy",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -226,9 +210,7 @@
           "select": [
             [
               {
-                "params": [
-                  "DAY_ENERGY"
-                ],
+                "params": ["DAY_ENERGY"],
                 "type": "field"
               },
               {
@@ -261,11 +243,7 @@
       "colorPostfix": false,
       "colorPrefix": false,
       "colorValue": false,
-      "colors": [
-        "#299c46",
-        "#FF9830",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "#FF9830", "#d44a3a"],
       "datasource": "InfluxDB",
       "format": "watth",
       "gauge": {
@@ -323,15 +301,11 @@
         {
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -343,9 +317,7 @@
           "select": [
             [
               {
-                "params": [
-                  "YEAR_ENERGY"
-                ],
+                "params": ["YEAR_ENERGY"],
                 "type": "field"
               },
               {
@@ -376,11 +348,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "datasource": null,
       "format": "watth",
       "gauge": {
@@ -439,15 +407,11 @@
           "alias": "Total energy",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -459,9 +423,7 @@
           "select": [
             [
               {
-                "params": [
-                  "TOTAL_ENERGY"
-                ],
+                "params": ["TOTAL_ENERGY"],
                 "type": "field"
               },
               {
@@ -506,11 +468,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "datasource": "InfluxDB",
       "decimals": 2,
       "format": "currencyPLN",
@@ -569,15 +527,11 @@
         {
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "none"
-              ],
+              "params": ["none"],
               "type": "fill"
             }
           ],
@@ -589,9 +543,7 @@
           "select": [
             [
               {
-                "params": [
-                  "DAY_ENERGY"
-                ],
+                "params": ["DAY_ENERGY"],
                 "type": "field"
               },
               {
@@ -599,9 +551,7 @@
                 "type": "max"
               },
               {
-                "params": [
-                  "*0.00059"
-                ],
+                "params": ["*0.00059"],
                 "type": "math"
               }
             ]
@@ -628,11 +578,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "datasource": "InfluxDB",
       "decimals": 2,
       "format": "currencyPLN",
@@ -692,15 +638,11 @@
           "alias": "Money made this year",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -712,9 +654,7 @@
           "select": [
             [
               {
-                "params": [
-                  "YEAR_ENERGY"
-                ],
+                "params": ["YEAR_ENERGY"],
                 "type": "field"
               },
               {
@@ -722,9 +662,7 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "*0.00059"
-                ],
+                "params": ["*0.00059"],
                 "type": "math"
               }
             ]
@@ -751,11 +689,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "datasource": "InfluxDB",
       "decimals": 2,
       "format": "currencyPLN",
@@ -815,15 +749,11 @@
           "alias": "Made made in total",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -835,9 +765,7 @@
           "select": [
             [
               {
-                "params": [
-                  "TOTAL_ENERGY"
-                ],
+                "params": ["TOTAL_ENERGY"],
                 "type": "field"
               },
               {
@@ -845,9 +773,7 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "*0.00059"
-                ],
+                "params": ["*0.00059"],
                 "type": "math"
               }
             ]
@@ -874,11 +800,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "datasource": "InfluxDB",
       "decimals": 2,
       "format": "currencyPLN",
@@ -938,15 +860,11 @@
           "alias": "Made made in total",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -960,9 +878,7 @@
           "select": [
             [
               {
-                "params": [
-                  "TOTAL_ENERGY"
-                ],
+                "params": ["TOTAL_ENERGY"],
                 "type": "field"
               },
               {
@@ -970,9 +886,7 @@
                 "type": "mean"
               },
               {
-                "params": [
-                  "*-0.00059+30500"
-                ],
+                "params": ["*-0.00059+30500"],
                 "type": "math"
               }
             ]
@@ -1052,15 +966,11 @@
           "alias": "AC power",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1072,9 +982,7 @@
           "select": [
             [
               {
-                "params": [
-                  "PAC"
-                ],
+                "params": ["PAC"],
                 "type": "field"
               },
               {
@@ -1170,15 +1078,11 @@
           "alias": "AC current",
           "groupBy": [
             {
-              "params": [
-                "$__interval"
-              ],
+              "params": ["$__interval"],
               "type": "time"
             },
             {
-              "params": [
-                "null"
-              ],
+              "params": ["null"],
               "type": "fill"
             }
           ],
@@ -1190,9 +1094,7 @@
           "select": [
             [
               {
-                "params": [
-                  "IAC"
-                ],
+                "params": ["IAC"],
                 "type": "field"
               },
               {

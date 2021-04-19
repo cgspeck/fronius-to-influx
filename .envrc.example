@@ -1,0 +1,6 @@
+export INVERTER_ENDPOINT=your-inverter-ip-address
+export INFLUXDB_V2_TOKEN=your-token
+export INFLUXDB_V2_URL=http://your-influx-db-host:port
+export INFLUXDB_V2_ORG=your-influxdb-org
+export INFLUXDB_V2_SSL_CA_CERT=false
+export INFLUXDB_BUCKET=fronius
