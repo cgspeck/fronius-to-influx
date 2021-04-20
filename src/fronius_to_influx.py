@@ -11,6 +11,8 @@ from influxdb_client import InfluxDBClient
 from requests import get
 from requests.exceptions import ConnectionError
 
+from fronius_error_codes import error_codes
+
 
 class WrongFroniusData(Exception):
     pass
@@ -63,14 +65,14 @@ class FroniusToInflux:
         collection = self.data["Head"]["RequestArguments"]["DataCollection"]
         timestamp = self.data["Head"]["Timestamp"]
         if collection == "CommonInverterData":
+            error_code = self.data["Body"]["Data"]["DeviceStatus"]["ErrorCode"]
             return [
                 {
                     "measurement": "DeviceStatus",
                     "time": timestamp,
                     "fields": {
-                        "ErrorCode": self.data["Body"]["Data"]["DeviceStatus"][
-                            "ErrorCode"
-                        ],
+                        "ErrorCode": error_code,
+                        "ErrorCodeMessage": error_codes[error_code],
                         "LEDColor": self.data["Body"]["Data"]["DeviceStatus"][
                             "LEDColor"
                         ],

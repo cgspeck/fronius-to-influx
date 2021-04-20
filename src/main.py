@@ -1,9 +1,10 @@
-from fronius_to_influx import FroniusToInflux
 from influxdb_client import InfluxDBClient
 from astral import LocationInfo
 from os import environ
 
 import pytz
+
+from fronius_to_influx import FroniusToInflux
 
 COLLECT_COMMON_INVERTER_DATA = (
     environ.get("COLLECT_COMMON_INVERTER_DATA", "true") == "true"
@@ -13,6 +14,8 @@ COLLECT_3P_INVERTER_DATA = environ.get("COLLECT_3P_INVERTER_DATA", "false") == "
 COLLECT_MINMAX_INVERTER_DATA = (
     environ.get("COLLECT_MINMAX_INVERTER_DATA", "false") == "true"
 )
+
+DATA_COLLECTION_INTERVAL = int(environ.get("DATA_COLLECTION_INTERVAL", 30))
 
 INVERTER_ENDPOINT = environ["INVERTER_ENDPOINT"]
 
@@ -61,6 +64,7 @@ z = FroniusToInflux(
     tz,
     INFLUXDB_BUCKET,
     ignore_sundown=IGNORE_SUN_DOWN,
+    data_collection_interval=DATA_COLLECTION_INTERVAL,
 )
 print("starting...")
 z.run()
