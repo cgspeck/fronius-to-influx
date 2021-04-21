@@ -2,20 +2,7 @@ version: "3.7"
 services:
   poller:
     image: cgspeck/fronius-to-influx:latest
-    environment:
-      - INVERTER_ENDPOINT
-      - INFLUXDB_BUCKET
-      - INFLUXDB_V2_TOKEN
-      - INFLUXDB_V2_URL
-      - INFLUXDB_V2_ORG
-      - INFLUXDB_V2_SSL_CA_CERT
-      - COLLECT_COMMON_INVERTER_DATA
-      - COLLECT_3P_INVERTER_DATA
-      - COLLECT_MINMAX_INVERTER_DATA
-      - DATA_COLLECTION_INTERVAL
-      - IGNORE_SUN_DOWN
-      - LOCATION_CITY
-      - LOCATION_REGION
-      - LOCATION_TIMEZONE
-      - LOCATION_LAT
-      - LOCATION_LNG
+    container_name: fronius-poller
+    restart: unless-stopped
+    network_mode: bridge
+    env_file: env

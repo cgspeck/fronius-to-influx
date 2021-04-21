@@ -1,0 +1,5 @@
+.git
+.envrc
+env
+.venv
+.mypy_cache
